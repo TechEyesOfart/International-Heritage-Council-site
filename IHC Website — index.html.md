@@ -1,0 +1,1232 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>International Heritage Council | IHC</title>
+
+    <meta name="description"
+          content="The International Heritage Council is dedicated to the research, preservation and conservation of cultural and historical heritage worldwide.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #101a2b;
+            --navy-light: #17243a;
+            --gold: #c9a86a;
+            --cream: #f5f1e8;
+            --white: #ffffff;
+            --text: #263142;
+            --muted: #687386;
+            --border: #ded8ca;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: #faf9f6;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(16, 26, 43, 0.94);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        nav {
+            max-width: 1250px;
+            margin: auto;
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+        }
+
+        .logo-mark {
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--gold);
+            display: grid;
+            place-items: center;
+            color: var(--gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 20px;
+        }
+
+        .logo-text strong {
+            display: block;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .logo-text span {
+            font-size: 9px;
+            color: #b8c0cc;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 27px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e9edf2;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+
+            /*
+                Replace IMAGE_URL with an image you have permission to use.
+            */
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(10,18,30,.93),
+                    rgba(10,18,30,.68),
+                    rgba(10,18,30,.25)
+                ),
+                url("IMAGE_URL_HERO")
+                center / cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 1250px;
+            width: 100%;
+            margin: auto;
+            padding: 120px 30px 70px;
+            color: white;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(58px, 8vw, 105px);
+            line-height: .9;
+            max-width: 800px;
+            font-weight: 600;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin-top: 30px;
+            color: #d9dee6;
+            font-size: 17px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            margin-top: 35px;
+        }
+
+        .btn {
+            padding: 13px 24px;
+            border: 1px solid var(--gold);
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-primary:hover {
+            background: white;
+            border-color: white;
+        }
+
+        .btn-outline {
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 110px 30px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-label {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: clamp(42px, 5vw, 65px);
+            color: var(--navy);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .section-intro {
+            max-width: 700px;
+            color: var(--muted);
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: var(--cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 520px;
+            background:
+                linear-gradient(rgba(0,0,0,.12), rgba(0,0,0,.12)),
+                url("IMAGE_URL_ABOUT")
+                center / cover no-repeat;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+            color: var(--muted);
+        }
+
+        /* ================= STATS ================= */
+
+        .stats {
+            background: var(--navy);
+            color: white;
+            padding: 55px 30px;
+        }
+
+        .stats-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+        }
+
+        .stat {
+            border-right: 1px solid rgba(255,255,255,.15);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            color: var(--gold);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 48px;
+        }
+
+        .stat p {
+            color: #c2cad5;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ================= WORK ================= */
+
+        .work-grid {
+            margin-top: 55px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .work-card {
+            padding: 35px;
+            background: white;
+            border: 1px solid var(--border);
+            transition: .3s;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .work-number {
+            color: var(--gold);
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .work-card h3 {
+            font-size: 28px;
+            margin: 20px 0 12px;
+            color: var(--navy);
+        }
+
+        .work-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
+            background: var(--cream);
+        }
+
+        .projects-grid {
+            margin-top: 55px;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 18px;
+        }
+
+        .project {
+            min-height: 420px;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project:nth-child(1) {
+            background-image: url("IMAGE_URL_PROJECT_1");
+        }
+
+        .project:nth-child(2) {
+            background-image: url("IMAGE_URL_PROJECT_2");
+        }
+
+        .project:nth-child(3) {
+            background-image: url("IMAGE_URL_PROJECT_3");
+        }
+
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background: linear-gradient(
+                transparent 30%,
+                rgba(8,15,26,.9)
+            );
+            color: white;
+        }
+
+        .project-overlay small {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .project-overlay h3 {
+            font-size: 30px;
+            margin-top: 7px;
+        }
+
+        /* ================= RESEARCH ================= */
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .research-list {
+            margin-top: 35px;
+        }
+
+        .research-item {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .research-item strong {
+            color: var(--navy);
+        }
+
+        .research-item p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .research-image {
+            height: 500px;
+            background:
+                url("IMAGE_URL_RESEARCH")
+                center / cover no-repeat;
+        }
+
+        /* ================= GLOBAL ================= */
+
+        .global {
+            background: var(--navy);
+            color: white;
+            text-align: center;
+        }
+
+        .global .section-title {
+            color: white;
+        }
+
+        .global .section-intro {
+            margin: auto;
+            color: #c7cfda;
+        }
+
+        .world-map {
+            margin: 55px auto 0;
+            max-width: 950px;
+            min-height: 350px;
+            border: 1px solid rgba(255,255,255,.15);
+            display: grid;
+            place-items: center;
+            background:
+                linear-gradient(
+                    rgba(16,26,43,.35),
+                    rgba(16,26,43,.35)
+                ),
+                url("IMAGE_URL_MAP")
+                center / cover no-repeat;
+        }
+
+        .world-map span {
+            padding: 15px 25px;
+            background: rgba(16,26,43,.9);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        /* ================= NEWS ================= */
+
+        .news-grid {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .news-card {
+            border-top: 2px solid var(--gold);
+            padding-top: 20px;
+        }
+
+        .news-date {
+            font-size: 11px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .news-card h3 {
+            font-size: 27px;
+            margin: 15px 0;
+            color: var(--navy);
+        }
+
+        .news-card p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .cta .section-intro {
+            margin: 0 auto 30px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #0b121e;
+            color: #aeb7c4;
+            padding: 60px 30px 30px;
+        }
+
+        .footer-grid {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        footer h3 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        footer h4 {
+            color: var(--gold);
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            font-size: 13px;
+        }
+
+        footer a {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        footer a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            max-width: 1150px;
+            margin: 45px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.1);
+            font-size: 11px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 78px;
+                left: 0;
+                right: 0;
+                background: var(--navy);
+                flex-direction: column;
+                padding: 25px 30px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .about-grid,
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .work-grid,
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .hero h1 {
+                font-size: 65px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            section {
+                padding: 75px 20px;
+            }
+
+            nav {
+                padding: 0 20px;
+            }
+
+            .hero-content {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,.15);
+                padding-bottom: 20px;
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+    <nav>
+
+        <a href="#home" class="logo">
+
+            <div class="logo-mark">
+                IHC
+            </div>
+
+            <div class="logo-text">
+                <strong>INTERNATIONAL</strong>
+                <span>HERITAGE COUNCIL</span>
+            </div>
+
+        </a>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#work">OUR WORK</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#research">RESEARCH</a></li>
+            <li><a href="#global">GLOBAL HERITAGE</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            International Heritage Council
+        </div>
+
+        <h1>
+            Preserving the
+            <span>Past.</span>
+            Protecting the
+            <span>Future.</span>
+        </h1>
+
+        <p class="hero-description">
+            Advancing the research, conservation and understanding
+            of cultural and historical heritage through international
+            cooperation and responsible preservation.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#about" class="btn btn-primary">
+                Discover IHC
+            </a>
+
+            <a href="#projects" class="btn btn-outline">
+                Explore Projects
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-image"></div>
+
+        <div class="about-text">
+
+            <div class="section-label">
+                About IHC
+            </div>
+
+            <h2 class="section-title">
+                Heritage belongs to everyone.
+            </h2>
+
+            <p>
+                The International Heritage Council is dedicated to
+                the research, preservation and sustainable conservation
+                of cultural and historical heritage.
+            </p>
+
+            <p>
+                We bring together researchers, conservation specialists,
+                cultural institutions, universities and local communities
+                to develop responsible approaches to heritage preservation.
+            </p>
+
+            <p>
+                Our work spans historic sites, monuments, archaeological
+                discoveries, cultural landscapes, traditional practices
+                and historical knowledge.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="stats-grid">
+
+        <div class="stat">
+            <div class="stat-number">42</div>
+            <p>Countries</p>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">126</div>
+            <p>Projects</p>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">380+</div>
+            <p>Research Publications</p>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">74</div>
+            <p>Institutional Partners</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= OUR WORK ================= -->
+
+<section id="work">
+
+    <div class="container">
+
+        <div class="section-label">
+            Our Work
+        </div>
+
+        <h2 class="section-title">
+            Knowledge into conservation.
+        </h2>
+
+        <p class="section-intro">
+            IHC combines academic research, conservation practice,
+            education and international cooperation to support the
+            protection of heritage.
+        </p>
+
+        <div class="work-grid">
+
+            <article class="work-card">
+                <span class="work-number">01</span>
+                <h3>Conservation</h3>
+                <p>
+                    Supporting the preservation of historic buildings,
+                    monuments, archaeological sites and cultural landscapes.
+                </p>
+            </article>
+
+            <article class="work-card">
+                <span class="work-number">02</span>
+                <h3>Research</h3>
+                <p>
+                    Conducting historical research, documentation,
+                    archival studies and heritage assessments.
+                </p>
+            </article>
+
+            <article class="work-card">
+                <span class="work-number">03</span>
+                <h3>Education</h3>
+                <p>
+                    Developing workshops, training programmes and
+                    educational resources for future heritage specialists.
+                </p>
+            </article>
+
+            <article class="work-card">
+                <span class="work-number">04</span>
+                <h3>Digital Heritage</h3>
+                <p>
+                    Using digital documentation, mapping and databases
+                    to record and preserve heritage information.
+                </p>
+            </article>
+
+            <article class="work-card">
+                <span class="work-number">05</span>
+                <h3>Communities</h3>
+                <p>
+                    Working with local communities to protect cultural
+                    knowledge, traditions and places of significance.
+                </p>
+            </article>
+
+            <article class="work-card">
+                <span class="work-number">06</span>
+                <h3>International Cooperation</h3>
+                <p>
+                    Connecting institutions and specialists to exchange
+                    knowledge and develop conservation practices.
+                </p>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section class="projects" id="projects">
+
+    <div class="container">
+
+        <div class="section-label">
+            Featured Projects
+        </div>
+
+        <h2 class="section-title">
+            Heritage in focus.
+        </h2>
+
+        <p class="section-intro">
+            Explore selected IHC conservation and research initiatives
+            across different regions and historical periods.
+        </p>
+
+        <div class="projects-grid">
+
+            <article class="project">
+
+                <div class="project-overlay">
+                    <small>Conservation</small>
+                    <h3>Ancient Urban Heritage</h3>
+                </div>
+
+            </article>
+
+            <article class="project">
+
+                <div class="project-overlay">
+                    <small>Research</small>
+                    <h3>Historic Landscapes</h3>
+                </div>
+
+            </article>
+
+            <article class="project">
+
+                <div class="project-overlay">
+                    <small>Documentation</small>
+                    <h3>Architectural Heritage</h3>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RESEARCH ================= -->
+
+<section id="research">
+
+    <div class="container research-grid">
+
+        <div>
+
+            <div class="section-label">
+                Research & Publications
+            </div>
+
+            <h2 class="section-title">
+                Understanding heritage through research.
+            </h2>
+
+            <p class="section-intro">
+                Research provides the foundation for responsible
+                conservation. IHC supports interdisciplinary studies
+                connecting history, archaeology, architecture and
+                cultural studies.
+            </p>
+
+            <div class="research-list">
+
+                <div class="research-item">
+                    <strong>Heritage Documentation</strong>
+                    <p>
+                        Methods for recording historic sites and cultural resources.
+                    </p>
+                </div>
+
+                <div class="research-item">
+                    <strong>Conservation Methodology</strong>
+                    <p>
+                        Research into responsible approaches to preservation.
+                    </p>
+                </div>
+
+                <div class="research-item">
+                    <strong>Digital Heritage</strong>
+                    <p>
+                        Digital tools for documenting and communicating heritage.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="research-image"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GLOBAL ================= -->
+
+<section class="global" id="global">
+
+    <div class="container">
+
+        <div class="section-label">
+            Global Heritage
+        </div>
+
+        <h2 class="section-title">
+            Connecting heritage across borders.
+        </h2>
+
+        <p class="section-intro">
+            IHC works through international cooperation to encourage
+            knowledge exchange and responsible heritage conservation.
+        </p>
+
+        <div class="world-map">
+
+            <span>
+                Our Global Network
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NEWS ================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">
+            News & Events
+        </div>
+
+        <h2 class="section-title">
+            From the Council.
+        </h2>
+
+        <div class="news-grid">
+
+            <article class="news-card">
+                <div class="news-date">
+                    Research
+                </div>
+
+                <h3>
+                    New Heritage Documentation Initiative
+                </h3>
+
+                <p>
+                    IHC launches a new programme dedicated to improving
+                    the documentation of historically significant sites.
+                </p>
+            </article>
+
+            <article class="news-card">
+                <div class="news-date">
+                    Conference
+                </div>
+
+                <h3>
+                    International Heritage Forum
+                </h3>
+
+                <p>
+                    Researchers and conservation specialists meet to
+                    exchange approaches to heritage preservation.
+                </p>
+            </article>
+
+            <article class="news-card">
+                <div class="news-date">
+                    Education
+                </div>
+
+                <h3>
+                    Heritage Conservation Workshop
+                </h3>
+
+                <p>
+                    A new educational programme introduces students
+                    to the principles of cultural heritage conservation.
+                </p>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="section-label">
+            Get Involved
+        </div>
+
+        <h2 class="section-title">
+            Help preserve our shared heritage.
+        </h2>
+
+        <p class="section-intro">
+            Explore opportunities to learn, collaborate and contribute
+            to the protection of cultural and historical heritage.
+        </p>
+
+        <a href="#contact" class="btn btn-primary">
+            Contact IHC
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>International Heritage Council</h3>
+
+            <p>
+                An international organization dedicated to heritage
+                research, conservation, education and cooperation.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>Explore</h4>
+
+            <a href="#about">About IHC</a>
+            <a href="#work">Our Work</a>
+            <a href="#projects">Projects</a>
+            <a href="#research">Research</a>
+
+        </div>
+
+        <div>
+
+            <h4>Contact</h4>
+
+            <p>info@ihc-heritage.org</p>
+            <p>International Heritage Council</p>
+            <p>Global Secretariat</p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 International Heritage Council. Fictional organization
+        website created for educational purposes.
+    </div>
+
+</footer>
+
+
+<script>
+
+    function toggleMenu() {
+
+        const menu = document.getElementById("navLinks");
+
+        menu.classList.toggle("active");
+
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            document
+                .getElementById("navLinks")
+                .classList
+                .remove("active");
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
+```
